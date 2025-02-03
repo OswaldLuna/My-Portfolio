@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://oswaldluna.io',
-  base: './',
+  site: 'https://OswaldLuna.io',
+  base: 'My-Portfolio',
   integrations: [tailwind(), react()],
   build: {
     assets: '_astro'
