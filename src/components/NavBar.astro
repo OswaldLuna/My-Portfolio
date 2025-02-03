@@ -1,0 +1,21 @@
+---
+import NavLink from "./NavLink.astro"
+import ThemeToggle from "./ThemeToggle"
+---
+
+<header 
+  class="fixed flex h-11 justify-center top-0 left-0 w-full z-10 px-6 bg-white/75 backdrop-blur-md
+  dark:bg-black/75 md:px-9 lg:h-16 lg:text-lg">
+  <nav class="relative flex  justify-center items-center w-full max-w-[1200px]">
+    <div class="flex justify-center gap-x-6">
+      <NavLink href="#about-me" label="About Me" mobileLabel="Me" />
+      <NavLink href="#experience" label="Work Experience" mobileLabel="Experience" />
+      <NavLink href="#projects" label="Projects" mobileLabel="Projects" />
+      <NavLink href="#certifications" label="Certifications" mobileLabel="Certifications" />
+    </div>
+
+    <div class="flex absolute right-0 items-center">
+      <ThemeToggle client:load/>
+    </div>
+  </nav>
+</header>

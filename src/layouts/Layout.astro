@@ -1,13 +1,19 @@
+---
+import '../styles/global.css';
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Building Ideas with Code | Oswaldo Luna | Software Engineer</title>
 	</head>
-	<body>
+	<body class="flex flex-col  items-center text-gray-950 
+	dark:text-white bg-white dark:bg-black bg-[radial-gradient(#6b21a8_1px,#fff_1px)] 
+		dark:bg-[radial-gradient(#6b21a8_1px,#000_1px)] bg-[size:30px_30px]">
 		<slot />
 	</body>
 </html>

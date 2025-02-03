@@ -1,0 +1,24 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+import FoldersIcon from "./icons/FoldersIcon.astro"
+import { projects } from "../data/projects"
+---
+
+<section id="projects" class="flex flex-col pt-20 lg:pt-36">
+  <div class="flex mb-7 gap-x-6 items-center lg:mb-11">
+    <FoldersIcon class="size-12 text-gray-600 dark:text-white lg:size-14"/>
+    <h1 class="font-bold text-5xl leading-normal  bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent lg:text-6xl lg:leading-normal ">
+      Projects
+    </h1>
+  </div>
+  <div class="flex flex-col gap-y-6 lg:gap-y-8">
+    {projects.map((project) => (
+      <ProjectCard 
+        title={project.title}
+        description={project.description}
+        images={project.images}
+        url={project.url}
+      />
+    ))}
+  </div>
+</section>
