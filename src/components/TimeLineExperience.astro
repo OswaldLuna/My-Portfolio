@@ -22,7 +22,11 @@ import { workExperience } from "../data/workRxperience";
         {job.title} - {job.company}
       </h3>
       <time class="block text-lg mb-6 font-medium leading-none text-gray-600 dark:text-gray-400">{job.date}</time>
-      <p class="mb-4 text-xl font-normal lg:text-2xl">{job.description}</p>
+      <ul class="mb-4 text-xl font-normal lg:text-2xl list-disc list-inside space-y-2">
+        {job.description.map((point, i) => (
+          <li>{point}</li>
+        ))}
+      </ul>    
     </li>
   ))}
 </ol>
