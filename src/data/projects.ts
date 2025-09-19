@@ -23,5 +23,11 @@ export const projects: Projects[] = [
     description:"Contributed to the development of an event management web application, implementing user authentication, access control, dynamic event browsing, and modules for event creation, attendee management, notifications, and ticketing. Built a responsive and modern frontend with Vue.js, Ant Design, and Tailwind CSS, managed state with Pinia, navigation with Vue Router, and ensured reliable form validation with VeeValidate and Yup.",
     url: "https://app.eventsight.io/login",
     images: ["/My-Portfolio/event1.webp","/My-Portfolio/event2.webp","/My-Portfolio/event3.webp"]
-  }
+  },
+  {
+    title: "WebGame - CoinFLip",
+    description:"Developed a cryptocurrency-based “heads or tails” web game, implementing a secure backend with PostgreSQL and GORM in Golang, and a responsive SvelteKit frontend with Tailwind CSS, Yup validation, and Three.js 3D models. Added real-time matchmaking and chat to boost engagement, ensuring secure digital transactions throughout the platform.",
+    url: "https://coinflip.bitlucky.app/",
+    images: ["/My-Portfolio/coin1.webp","/My-Portfolio/coin2.webp","/My-Portfolio/coin3.webp"]
+  },
 ]
