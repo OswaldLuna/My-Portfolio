@@ -4,37 +4,82 @@ import SocialBadge from "./SocialBadge.astro"
 import LinkedInIcon from "./icons/LinkedInIcon.astro"
 ---
 
-<section 
+<section
   id="about-me"
-  class="flex flex-col pt-20 lg:pt-36"
-  >
-  <h3 class="font-medium text-xl text-purple-400 mb-2 lg:text-2xl">
+  class="relative flex flex-col pt-20 lg:pt-36 overflow-hidden"
+>
+  <div aria-hidden="true" class="blob blob-1"></div>
+  <div aria-hidden="true" class="blob blob-2"></div>
+
+  <p class="font-medium text-xl text-purple-400 mb-2 lg:text-2xl">
     Hi! I'm
-  </h3>
+  </p>
   <h1 class="text-5xl font-bold mb-1 lg:text-6xl">
     <span class="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
       Oswaldo Luna
     </span>
   </h1>
-  <h2 class="text-2xl font-semibold text-gray-600 dark:text-gray-400 mb-7 lg:text-3xl lg:mb-11">
+  <h2 class="text-2xl font-semibold text-gray-600 dark:text-gray-300 mb-7 lg:text-3xl lg:mb-11">
     Software Developer
   </h2>
   <p class="text-xl max-w-5xl leading-relaxed text-pretty break-words bg-white mb-8 dark:bg-transparent lg:text-2xl lg:mb-11">
-    Full Stack Developer with 5+ years of experience building scalable web and mobile applications. Specialized in React, Next.js, Vue.js, and Python/FastAPI, with strong expertise in cloud deployment (AWS, Azure) and database management (MongoDB, PostgreSQL). Skilled in designing responsive, user-centered interfaces and implementing efficient state management solutions (Zustand, TanStack Query, Pinia, Redux). Experienced in delivering end-to-end solutions, from UI/UX design to backend integration, ensuring high performance, scalability, and maintainability.  </p>
+    Full Stack Developer with 5+ years of experience building production web platforms for clients in commercial equipment, event management, and SaaS sectors. Specialized in Vue 3, Next.js, React, and Python (FastAPI/Flask), with hands-on experience integrating ERP systems (Odoo via XML-RPC), serverless automations on AWS, and deploying multi-tenant applications. Proficient in layered architectures, advanced state management (TanStack Query, Pinia, Zustand), and delivering end-to-end solutions from API design to user interface.
+  </p>
   <div class="flex text-white gap-x-6">
-    <SocialBadge 
+    <SocialBadge
       href="https://github.com/OswaldLuna"
       ariaLabel="Go to GitHub"
     >
       <GitHubIcon class="size-8"/>
       Github
     </SocialBadge>
-    <SocialBadge 
+    <SocialBadge
       href="https://www.linkedin.com/in/oswaldo-luna-hernandez-7282a12a5/"
       ariaLabel="Go to LinkedIn"
     >
       <LinkedInIcon class="size-8"/>
-      LinkendIn
+      LinkedIn
     </SocialBadge>
   </div>
 </section>
+
+<style>
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .blob-1 {
+    width: 520px;
+    height: 520px;
+    top: -160px;
+    right: -220px;
+    background: radial-gradient(circle, #6b21a8, transparent 70%);
+    opacity: 0.22;
+    animation: blobFloat 9s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .blob-2 {
+    width: 320px;
+    height: 320px;
+    top: 80px;
+    right: 60px;
+    background: radial-gradient(circle, #c084fc, transparent 70%);
+    opacity: 0.14;
+    animation: blobFloat 9s ease-in-out infinite;
+    animation-delay: -4.5s;
+    will-change: transform;
+  }
+
+  @keyframes blobFloat {
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50%       { transform: scale(1.12) translate(-28px, 14px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blob { animation: none; }
+  }
+</style>

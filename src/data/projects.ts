@@ -7,16 +7,16 @@ export interface Projects {
 
 export const projects: Projects[] = [
   {
-    title: "ALTEZA Website - Commercial Kitchen Equipment Supplier",
-    description:"Designed and developed the complete user interface using Vue 3, Tailwind CSS, and vee-validate for custom form validations.Implemented a dynamic product filtering system by ZIP code, enabling users to view products available in their location.Developed functionality for generating orders and directing them to the appropriate department to initiate the purchase process.Integrated Google Analytics and Tag Manager to monitor website traffic and analyze performance by tracking visits and button clicks.Independently handled the frontend development while collaborating with a teammate responsible for the backend to ensure seamless integration.",
+    title: "Alteza Kitchen — B2B E-commerce Platform for Commercial Kitchen Equipment",
+    description:"Built a fullstack B2B e-commerce platform with a Flask REST API middleware integrating Odoo ERP via XML-RPC and a Vue 3 SPA with layered architecture, featuring dynamic tier-based pricing by zip code and sales rep, dual-layer JWT auth, programmatic PDF generation with ReportLab, bulk order processing from XLSX files, and a multi-step checkout flow with discounts, rebates, and customer credits.",
     url: "https://altezaconnect.com/",
-    images: ["/My-Portfolio/alteza1.webp","/My-Portfolio/alteza2.webp","/My-Portfolio/alteza4.webp"]
+    images: ["/My-Portfolio/alteza1.webp","/My-Portfolio/alteza2.webp","/My-Portfolio/alteza3.webp"]
   },
   {
-    title: "Landing Page",
-    description:"I developed a landing page for a company, designed to showcase its services and provide an interactive contact form for potential clients. I used Next.js and Tailwind CSS to create a modern and responsive design, while React Hook Form ensured efficient form validation. Additionally, I implemented animations and transitions to enhance the user experience, making the page more engaging and intuitive.",
-    url: "http://sbx.landing.zhowit.com/",
-    images: ["/My-Portfolio/bizzne1.webp","/My-Portfolio/bizzne2.webp","/My-Portfolio/bizzne4.webp"]
+    title: "Vekio — Performance Center Management System",
+    description:"Developed a multi-tenant SaaS platform for gym management deployed as a PWA and Google Play TWA, built on Next.js 15 + React 19 with per-gym brand isolation, real-time WebSocket integration with ZKTeco biometric devices (fingerprint, facial recognition, QR check-in), Stripe payments, recurring class scheduling, and global state managed with TanStack Query v5 and Zustand v5.",
+    url: "https://vekio.app/",
+    images: ["/My-Portfolio/vekio1.webp","/My-Portfolio/vekio2.webp","/My-Portfolio/vekio3.webp"]
   },
   {
     title: "WebApp - EventSight",

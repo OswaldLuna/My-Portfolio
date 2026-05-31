@@ -1,19 +1,21 @@
 ---
-const { href, label, mobileLabel } = Astro.props;
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
 ---
 
-<a 
-  href={href} 
-  
-  class="text-purple-800 hidden transition-colors duration-300 hover:underline hover:text-purple-500 
-  dark:hover:text-white dark:text-white/75 md:block xl:text-lg"
+<a
+  href={href}
+  aria-label={label}
+  class="flex items-center gap-x-1.5 text-purple-800 transition-colors duration-300 hover:text-purple-500
+  focus-visible:outline-none focus-visible:text-purple-500
+  dark:text-white/75 dark:hover:text-white dark:focus-visible:text-white"
 >
-  {label}
-</a>
-<a 
-  href={href} 
-  class="text-purple-800 transition-colors duration-300 hover:underline hover:text-purple-500
-  dark:text-white/75 dark:hover:text-white md:hidden"
->
-  {mobileLabel}
+  <span class="flex items-center justify-center">
+    <slot name="icon" />
+  </span>
+  <span class="hidden md:inline hover:underline focus-visible:underline xl:text-lg">{label}</span>
 </a>

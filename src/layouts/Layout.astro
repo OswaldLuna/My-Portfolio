@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+
+const title = "Oswaldo Luna | Full Stack Developer";
+const description = "Full Stack Developer with 5+ years of experience building production web platforms. Specialized in Vue 3, Next.js, React, and Python (FastAPI), with hands-on experience in ERP integrations, AWS, and end-to-end solutions.";
+const canonicalURL = "https://OswaldLuna.io";
+const ogImage = `${canonicalURL}/og-image.png`;
 ---
 
 <!doctype html>
@@ -7,22 +12,75 @@ import '../styles/global.css';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Building Ideas with Code | Oswaldo Luna | Software Engineer</title>
+		<script is:inline>
+			(function() {
+				var saved = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				var theme = saved || (prefersDark ? 'dark' : 'light');
+				if (theme === 'light') document.documentElement.classList.remove('dark');
+			})();
+		</script>
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Oswaldo Luna" />
+		<meta name="theme-color" content="#6b21a8" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- JSON-LD Structured Data -->
+		<script is:inline type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Oswaldo Luna",
+			"url": canonicalURL,
+			"jobTitle": "Full Stack Developer",
+			"description": description,
+			"sameAs": [
+				"https://github.com/OswaldLuna",
+				"https://www.linkedin.com/in/oswaldo-luna-hernandez-7282a12a5/"
+			],
+			"knowsAbout": ["Vue 3", "React", "Next.js", "TypeScript", "Python", "FastAPI", "Odoo ERP", "AWS"]
+		})} />
 	</head>
 	<body class="flex flex-col  items-center text-gray-950 
 	dark:text-white bg-white dark:bg-black bg-[radial-gradient(#6b21a8_1px,#fff_1px)] 
 		dark:bg-[radial-gradient(#6b21a8_1px,#000_1px)] bg-[size:30px_30px]">
 		<slot />
+		<script>
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (!entry.isIntersecting) return;
+						const delay = parseInt((entry.target as HTMLElement).dataset.delay ?? '0', 10);
+						setTimeout(() => entry.target.classList.add('is-visible'), delay);
+						observer.unobserve(entry.target);
+					});
+				},
+				{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+			);
+			document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
