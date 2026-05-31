@@ -21,7 +21,7 @@ export const workExperience:WorkExperience[] = [
   {
     title: "Freelance Full Stack Developer",
     company: "Alteza LLC",
-    date: "2025 to present",
+    date: "2024 to present",
     description: [
       "Designed and implemented a FastAPI REST API with a layered architecture (API → Services → Repositories → Connector → Odoo), integrating Odoo ERP via XML-RPC with a singleton client, per-model repositories, and a fluent domain filter builder.",
       "Built an automated scraper agent with Playwright that authenticates with MFA via IMAP, paginates and extracts data from an external incentives platform (IRIS), and syncs results to Odoo daily via APScheduler.",
